@@ -1,0 +1,17 @@
+[run]
+branch = True
+omit =
+    *__init__*
+    *sh
+    *test*
+    scripts/*
+
+source = .
+
+[report]
+fail_under = 70
+ignore_errors = False
+show_missing = True
+
+[html]
+directory = coverage
