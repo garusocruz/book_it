@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "book-it"
+version = "0.0.0"
+description = ""
+authors = ["garusocruz <garusotec@gmail.com>"]
+license = "MIT License"
+readme = "README.md"
+packages = [{include = "book_it"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
