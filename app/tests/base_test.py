@@ -11,14 +11,12 @@ class BaseTest(abc.ABC):
     """
 
     @abc.abstractclassmethod
-    def set_up(cls):
+    # pylint: disable=C0103
+    def setUp(cls):
+        # pylint: enable=C0103
         """Default setUp for every switch test
 
         Returns:
             Any : NotImplemented
         """
         return NotImplemented
-
-    @abc.abstractclassmethod
-    def __init__(cls) -> None:
-        super().__init__()
