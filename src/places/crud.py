@@ -24,6 +24,8 @@ def create_place(db: Session, place: schemas.PlaceCreate):
 
 def update_place(db:Session, place_id: int, place: schemas.PlaceCreate):
     db_place = db.query(models.Place).filter(models.Place.id == place_id).first()
+    if not db_place:
+        return None
     db_place.name = place.name
     db_place.description = place.description
     db_place.capacity = place.capacity
@@ -34,6 +36,8 @@ def update_place(db:Session, place_id: int, place: schemas.PlaceCreate):
 
 def delete_place(db:Session, place_id: int):
     db_place = db.query(models.Place).filter(models.Place.id == place_id).first()
+    if not db_place:
+        return None
     db.delete(db_place)
     db.commit()
     return db_place
