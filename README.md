@@ -23,3 +23,9 @@ pip install -r requirements.txt
 ```sh
 uvicorn src.base_app.main:app --reload
 ```
+
+## run places app
+
+```sh
+uvicorn src.places.main:app --reload
+```
