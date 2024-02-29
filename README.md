@@ -35,3 +35,15 @@ uvicorn src.places.main:app --reload
 ```sh
 uvicorn src.schedules.main:app --reload
 ```
+
+## run customers app
+
+```sh
+uvicorn src.customers.main:app --reload
+```
+
+## run professionals app
+
+```sh
+uvicorn src.professionals.main:app --reload
+```
