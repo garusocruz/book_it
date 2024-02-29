@@ -71,3 +71,31 @@ def delete_calendar(calendar_id: int, db: Session = Depends(get_db)):
     if not db_calendar:
         raise HTTPException(status_code=404, detail="Calendar not found")
     return db_calendar
+
+
+# EVENTS
+@app.post("/events/", response_model=schemas.Event)
+def create_events(event: schemas.EventCreate, db: Session = Depends(get_db)):
+    return crud.create_event(db=db, event=event)
+
+
+@app.get("/events/", response_model=list[schemas.Event])
+def read_events(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    users = crud.get_events(db, skip=skip, limit=limit)
+    return users
+
+
+@app.get("/events/{event_id}", response_model=schemas.Event)
+def read_event(event_id: int, db: Session = Depends(get_db)):
+    db_event = crud.get_event(db, event_id=event_id)
+    if db_event is None:
+        raise HTTPException(status_code=404, detail="Event not found")
+    return db_event
+
+
+@app.delete("/events/{event_id}", response_model=schemas.Availability)
+def delete_event(event_id: int, db: Session = Depends(get_db)):
+    db_event = crud.delete_event(db, event_id=event_id)
+    if not db_event:
+        raise HTTPException(status_code=404, detail="Event not found")
+    return db_event
