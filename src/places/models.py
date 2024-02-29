@@ -1,9 +1,10 @@
 from sqlalchemy import Boolean, Column, Integer, String
 
-from ..db.database import Base
+from ..db.database import Base, BaseModel
 
 
-class Place(Base):
+from ..db.database import Base, BaseModel
+class Place(Base, BaseModel):
     __tablename__ = "places"
 
     id = Column(Integer, primary_key=True)
