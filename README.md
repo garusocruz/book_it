@@ -47,3 +47,9 @@ uvicorn src.customers.main:app --reload
 ```sh
 uvicorn src.professionals.main:app --reload
 ```
+
+## run calendars app
+
+```sh
+uvicorn src.calendars.main:app --reload
+```
