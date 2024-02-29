@@ -29,3 +29,9 @@ uvicorn src.base_app.main:app --reload
 ```sh
 uvicorn src.places.main:app --reload
 ```
+
+## run schedule app
+
+```sh
+uvicorn src.schedules.main:app --reload
+```
