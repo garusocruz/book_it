@@ -45,3 +45,29 @@ def delete_availabilities(availability_id: int, db: Session = Depends(get_db)):
         raise HTTPException(status_code=404, detail="Availability not found")
     return db_availability
 
+# CALENDAR
+@app.post("/calendars/", response_model=schemas.Calendar)
+def create_calendars(calendar: schemas.CalendarCreate, db: Session = Depends(get_db)):
+    return crud.create_calendar(db=db, calendar=calendar)
+
+
+@app.get("/calendars/", response_model=list[schemas.Calendar])
+def read_calendar(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
+    users = crud.get_calendars(db, skip=skip, limit=limit)
+    return users
+
+
+@app.get("/calendars/{calendar_id}", response_model=schemas.Calendar)
+def read_calendar(calendar_id: int, db: Session = Depends(get_db)):
+    db_calendar = crud.get_calendar(db, calendar_id=calendar_id)
+    if db_calendar is None:
+        raise HTTPException(status_code=404, detail="Calendar not found")
+    return db_calendar
+
+
+@app.delete("/calendars/{calendar_id}", response_model=schemas.Availability)
+def delete_calendar(calendar_id: int, db: Session = Depends(get_db)):
+    db_calendar = crud.delete_calendar(db, calendar_id=calendar_id)
+    if not db_calendar:
+        raise HTTPException(status_code=404, detail="Calendar not found")
+    return db_calendar
