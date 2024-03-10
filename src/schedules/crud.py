@@ -1,6 +1,7 @@
 from datetime import datetime
 from sqlalchemy.orm import Session
-from . import models, schemas
+from . import models, schemas 
+from ..users import schemas as user_schema
 
 
 def get_schedule(db: Session, schedule_id: int):
