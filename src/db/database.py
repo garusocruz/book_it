@@ -17,3 +17,10 @@ class BaseModel():
     id = Column(Integer, primary_key=True)
     created_at = Column(DateTime, nullable=False)
     updated_at = Column(DateTime, nullable=True)
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
