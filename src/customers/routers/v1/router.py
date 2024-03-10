@@ -1,24 +1,17 @@
 from fastapi import Depends, FastAPI, HTTPException
 from sqlalchemy.orm import Session
 
-from . import crud, models, schemas
-from ..db.database import SessionLocal, engine
+from ... import crud, models, schemas
+from ....db.database import engine, get_db
+from fastapi import APIRouter
+
+router = APIRouter(prefix="/v1/customers", tags=["customer"])
 
 models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI()
 
 
-# Dependency
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
-
-@app.post("/customers/", response_model=schemas.Customer)
+@router.post("/customers/", response_model=schemas.Customer)
 def create_customer(customer: schemas.CustomerCreate, db: Session = Depends(get_db)):
     customer = crud.create_customer(db=db, customer=customer)
 
@@ -27,13 +20,13 @@ def create_customer(customer: schemas.CustomerCreate, db: Session = Depends(get_
     return customer
 
 
-@app.get("/customers/", response_model=list[schemas.Customer])
+@router.get("/customers/", response_model=list[schemas.Customer])
 def read_customers(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     customers = crud.get_customers(db, skip=skip, limit=limit)
     return customers
 
 
-@app.get("/customers/{customer_id}", response_model=schemas.Customer)
+@router.get("/customers/{customer_id}", response_model=schemas.Customer)
 def read_customer(customer_id: int, db: Session = Depends(get_db)):
     db_customer = crud.get_customer(db, customer_id=customer_id)
     if db_customer is None:
@@ -41,14 +34,14 @@ def read_customer(customer_id: int, db: Session = Depends(get_db)):
     return db_customer
 
 
-@app.put("/customers/{customer_id}", response_model=schemas.Customer)
+@router.put("/customers/{customer_id}", response_model=schemas.Customer)
 def update_customer(customer_id: int, customer: schemas.CustomerCreate, db: Session = Depends(get_db)):
     db_customer = crud.update_customer(db, customer_id=customer_id, customer=customer)
     if not db_customer:
         raise HTTPException(status_code=404, detail="Customer not found")
     return db_customer
 
-@app.delete("/customers/{customer_id}", response_model=schemas.Customer)
+@router.delete("/customers/{customer_id}", response_model=schemas.Customer)
 def delete_customer(customer_id: int, db: Session = Depends(get_db)):
     db_customer = crud.delete_customer(db, customer_id=customer_id)
     if not db_customer:

@@ -7,6 +7,7 @@ class CustomerBase(BaseModel):
     name: str
     phone: str
     cpf: str
+    user_id: int
 
 
 class CustomerCreate(CustomerBase):

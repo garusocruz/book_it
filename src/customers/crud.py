@@ -19,13 +19,14 @@ def create_customer(db: Session, customer: schemas.CustomerCreate):
             name = customer.name,
             phone = customer.phone,
             cpf = customer.cpf,
+            user_id = customer.user_id,
             created_at = customer.created_at,
             updated_at = customer.updated_at)
         db.add(db_customer)
         db.commit()
         db.refresh(db_customer)
         return db_customer
-    except sqlalchemy.exc.IntegrityError:
+    except sqlalchemy.exc.IntegrityError as err:
         return None
 
 def update_customer(db:Session, customer_id: int, customer: schemas.CustomerCreate):
