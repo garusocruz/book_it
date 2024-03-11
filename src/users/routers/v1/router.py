@@ -18,8 +18,6 @@ router = APIRouter(prefix="/v1/users", tags=["user"])
 
 @router.post("/", response_model=schemas.User)
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
-    import ipdb
-    ipdb.set_trace()
     user = crud.create_user(db=db, user=user)
 
     if not user:
