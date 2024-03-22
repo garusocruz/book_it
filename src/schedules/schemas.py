@@ -1,6 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel
-
+from typing import Optional
 
 
 class ScheduleBase(BaseModel):
@@ -12,13 +12,13 @@ class ScheduleBase(BaseModel):
 
 class ScheduleCreate(ScheduleBase):
     created_at: datetime = datetime.now()
-    updated_at: datetime | None = None
+    updated_at: Optional[datetime] = None
     
 
 class  Schedule(ScheduleBase):
     id: int
     created_at: datetime
-    updated_at: datetime | None = None
+    updated_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True

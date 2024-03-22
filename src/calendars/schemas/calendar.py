@@ -1,5 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel
+from typing import Optional
 
 
 class CalendarBase(BaseModel):
@@ -8,14 +9,14 @@ class CalendarBase(BaseModel):
 
 class CalendarCreate(CalendarBase):
     created_at: datetime = datetime.now()
-    updated_at: datetime | None = None
+    updated_at: Optional[datetime] = None
 
 
 
 class  Calendar(CalendarBase):
     id: int
     created_at: datetime
-    updated_at: datetime | None = None
+    updated_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True

@@ -1,5 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel
+from typing import Optional
 
 
 class EventBase(BaseModel):
@@ -10,14 +11,14 @@ class EventBase(BaseModel):
 
 class EventCreate(EventBase):
     created_at: datetime = datetime.now()
-    updated_at: datetime | None = None
+    updated_at: Optional[datetime] = None
 
 
 
 class  Event(EventBase):
     id: int
     created_at: datetime
-    updated_at: datetime | None = None
+    updated_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True

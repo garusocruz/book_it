@@ -6,7 +6,7 @@ from ..db.database import get_db
 from jose import jwt
 from fastapi.security import OAuth2PasswordBearer
 from ..users import service as user_service
-
+from typing import Optional
 
 
 # to get a string like this run:
@@ -23,8 +23,7 @@ oauth2_scheme = OAuth2PasswordBearer(tokenUrl="api/v1/auth/tokens")
 def verify_password(plain_password, hashed_password):
     return pwd_context.verify(plain_password, hashed_password)
 
-def create_access_token(data: dict, expires_delta: timedelta | None = None):
-    SECRET_KEY = "09d25e094faa6ca2556c818166b7a9563b937099f6f0f4caa6cf63b88e8d3e7"
+def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
     if expires_delta:
         expire = datetime.now(timezone.utc) + expires_delta

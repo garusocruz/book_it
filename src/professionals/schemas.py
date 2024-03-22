@@ -1,5 +1,6 @@
 from datetime import datetime
 from pydantic import BaseModel
+from typing import Optional
 
 
 
@@ -10,13 +11,13 @@ class ProfessionalBase(BaseModel):
 
 class ProfessionalCreate(ProfessionalBase):
     created_at: datetime = datetime.now()
-    updated_at: datetime | None = None
+    updated_at: Optional[datetime] = None
     
 
 class  Professional(ProfessionalBase):
     id: int
     created_at: datetime
-    updated_at: datetime | None = None
+    updated_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True

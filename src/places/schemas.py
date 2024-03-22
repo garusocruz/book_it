@@ -1,9 +1,10 @@
 from pydantic import BaseModel
+from typing import Optional
 
 
 class PlaceBase(BaseModel):
     capacity: int
-    description: str | None = None
+    description: Optional[str] = None
     is_active: bool
     name: str
     
