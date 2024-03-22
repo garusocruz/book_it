@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  zeek:
+    image: zeek/zeek:latest
+    volumes:
+      - ../zeek:/usr/local/zeek/zeek
+    command: ["zeek", "-i", "eth0", "/usr/local/zeek/zeek/local.zeek"]
+    depends_on:
+      - elasticsearch
+
+  painkiller-patient:
+    build:
+      context: ../
+      dockerfile: .docker/fast_api/Dockerfile
+
+    volumes:
+      - ..:/app
+    ports:
+      - "8000:8000"
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.15.2
+    environment:
+      - discovery.type=single-node
+    ports:
+      - "9200:9200"
+    # Use this when needs to debug
+    # stdin_open: true
+    # tty: true
