@@ -1,0 +1,475 @@
+[33mcommit 0aa69ef72ec915a3ec4010fe28d27d5d2e415812[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Gabriel Cruz <garusotec@gmail.com>
+Date:   Fri Mar 22 07:50:50 2024 -0300
+
+    Add zeek
+
+[33mcommit cefabb27170fda3d80df40469d3fecbda8f0866a[m
+Author: Gabriel Cruz <garusotec@gmail.com>
+Date:   Fri Mar 22 07:50:34 2024 -0300
+
+    add missing requirements
+
+[33mcommit e06d109beb3f11d3c977c1154d6469297a6967ae[m
+Author: Gabriel Cruz <garusotec@gmail.com>
+Date:   Fri Mar 22 07:50:12 2024 -0300
+
+    typo ajusts
+
+[33mcommit e9f9262f84ce2de835159fceadc7684d5decb450[m
+Author: Gabriel Cruz <garusotec@gmail.com>
+Date:   Fri Mar 22 07:49:30 2024 -0300
+
+    create docker containers
+
+[33mcommit a14e98a18ac51319b7f9ca7ffc29b2297a731317[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sat Mar 16 03:24:40 2024 -0300
+
+    WIP MANY ADJUSTS
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+    Co-authored-by: FredVonHue <FredVonHue@users.noreply.github.com>
+
+[33mcommit 431f5d75cec26ac44f232d02a58debd2861992a3[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 21:31:55 2024 -0300
+
+    Bumpind DB
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit 46e868b787e3de03557abb667a746c16e8093e7e[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 21:29:43 2024 -0300
+
+    Remove debugging with ipdb
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit 45bd48234da1111c17c0bd5da04d62c5b23ffedf[m
+Author: Gabriel Cruz <36795538+garusocruz@users.noreply.github.com>
+Date:   Sun Mar 10 21:11:05 2024 -0300
+
+    Create dependabot.yml
+
+[33mcommit 03bb60ecfa71f807da16cdcf1472129e432870ec[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 20:58:12 2024 -0300
+
+    Bumpind DB
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit 9011b98ff289e6f05f76d400cd76c932b8f9bd0f[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 20:58:00 2024 -0300
+
+    Add on delete cascade
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit 3ab6dfc5cf3308869769e84f1325de171ede4ca3[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 20:57:40 2024 -0300
+
+    Create function to get db instance
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit 083ce4102da281a3adff1c9bdff7a00ef8f5b25f[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 20:57:19 2024 -0300
+
+    Create routes from schedules app
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit a02f362a9ce65b48e49f06acf1b60ba7582391b0[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 20:57:08 2024 -0300
+
+    Create app users
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit be9b28d75eb4ccd25399ad2825b681c085dc45ed[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 20:56:58 2024 -0300
+
+    Create routes from professionals app
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit c81c99ac30c416a270397515a0131370259b8826[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 20:56:47 2024 -0300
+
+    Create routes from places app
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit cb63e016661a53df42e256ddb695459113d3478d[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 20:56:33 2024 -0300
+
+    Create routes from customer app
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit 4d73a415c1ffba6e5811a6d1afc755ff9ee1ea46[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 20:56:18 2024 -0300
+
+    Create app auth
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit 680723dd68693edce687ea99c08e6a74e8188648[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Sun Mar 10 20:56:07 2024 -0300
+
+    Create app main
+    
+    Co-authored-by: Kenji Yamazaki <Yamazilla@users.noreply.github.com>
+
+[33mcommit c11b921db46e864c69ce25cf9f15a094e9ee3e4b[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 17:23:05 2024 -0300
+
+    Add commands to run calendars api
+
+[33mcommit ea04367b65f305b58f80d3d43a84f96557200977[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 17:20:19 2024 -0300
+
+    Bump db
+
+[33mcommit e15124c11d525d6261a0fe70782bbefdbe9af203[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 17:20:07 2024 -0300
+
+    Create model, schema, CRUD and routes from event
+
+[33mcommit a48e5ea31dc1cf6eb028bb576e32b7d21edec9f1[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 17:19:47 2024 -0300
+
+    --ammend
+
+[33mcommit b28189206fca15a47b3be4cae1926c0148c82dc4[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 17:19:32 2024 -0300
+
+    Create model, schema, CRUD and routes from availability
+
+[33mcommit bae0a8dde1878fe6b3b86ddc53986737d34a6a05[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 17:19:06 2024 -0300
+
+    Initialize packages
+
+[33mcommit 71ed0dce09ae407d64b870e873dfe1ac4fc26ea0[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 17:18:34 2024 -0300
+
+    Create model, schema, CRUD and routes from calendars
+
+[33mcommit 95024f9d0efb3773e026e4be035e10a1fa604a88[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 17:17:35 2024 -0300
+
+    initialize app calendars
+
+[33mcommit ed09fdcaa5f238fa5f79c4d407c13ee9fb1345b0[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 17:17:18 2024 -0300
+
+    Reference the right Model
+
+[33mcommit 48c7e1d62b6a1e894971d66ea0a76c39c622c2b8[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 17:16:58 2024 -0300
+
+    change field name and add date
+
+[33mcommit 6ef562c03d2b8630a4924f554e726b7730e80e6d[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 15:59:50 2024 -0300
+
+    Bump db
+
+[33mcommit 9a1ab59ddb076c4e6b92904847bee3b9bff08f99[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 15:59:41 2024 -0300
+
+    Add relationship
+
+[33mcommit 6cee7e286b31462c8c281c4a7780a00c20a1c8f6[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:37:38 2024 -0300
+
+    Add commands to run customers and professionals api
+
+[33mcommit 12364bde6cd0a80cdecc5848858aa3c09ca5dc1b[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:36:05 2024 -0300
+
+    Bump db
+
+[33mcommit c8372629c295ffa8d6645a47b98f82302428beb5[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:35:56 2024 -0300
+
+    create a professionals app and routes
+
+[33mcommit 91fd8bc86ad9f3700644c3275c828b0c899ceb1c[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:35:44 2024 -0300
+
+    create a professionals CRUD functions
+
+[33mcommit 4980f1ea6bad42386bf3e6261a7686393dc1f908[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:35:32 2024 -0300
+
+    create a professionals schemas
+
+[33mcommit fa23684c3fe070bd73216865d8c82f390538ea0a[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:35:25 2024 -0300
+
+    create a professionals models
+
+[33mcommit 719f3dba64a52b7b739e928456da5e9347b38fb3[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:35:18 2024 -0300
+
+    create a professionals app
+
+[33mcommit d7e7a6638a68fc5b3d519ff08e1f750dca69690d[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:12:23 2024 -0300
+
+    Bump db
+
+[33mcommit e601354f4987af8c28e388e3e9ee4fb79993c88d[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:12:15 2024 -0300
+
+    create a customers app and routes
+
+[33mcommit ffe03eb1778d45e56a123e586cf13283140055f0[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:12:03 2024 -0300
+
+    create a customers CRUD functions
+
+[33mcommit 0668ac4d7baeb548e0b702acd920bda737b44778[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:11:54 2024 -0300
+
+    create a customers schemas
+
+[33mcommit de698f66a09c604b8ffeb3ccf36fa9caff8e6427[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:11:46 2024 -0300
+
+    create a customers models
+
+[33mcommit 79c060808719efcfd5cd1430c748fcb447873335[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:11:36 2024 -0300
+
+    create a customers app
+
+[33mcommit 82d91acdfde236e20edc3a7850ee37847d2fd0d4[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:10:46 2024 -0300
+
+    removing id cause now the field is a common
+
+[33mcommit 0071f4933c4fce9341b0a86249ee48d7ab6b48c1[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 13:09:51 2024 -0300
+
+    Add field id as common fields
+
+[33mcommit f1dce5bb86a6d32cc9ecc8ff5a9c4e6eada309b8[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 11:47:07 2024 -0300
+
+    add command to execute schedules app
+
+[33mcommit c1eff58de2e091474927f81b12b4033747487acd[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 11:46:17 2024 -0300
+
+    Bump db
+
+[33mcommit 9bde9b7c3db521f65cdc7370649558c4f19fb6d4[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 11:46:02 2024 -0300
+
+    create a schedule app and routes
+
+[33mcommit e5f18e629c1c0b830a2cefe7864e8d2087dbfe80[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 11:45:52 2024 -0300
+
+    create a schedule CRUD functions
+
+[33mcommit ceaead00e10d9cb15abb407531488849b9b4f8a8[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 11:45:36 2024 -0300
+
+    create a schedule schema
+
+[33mcommit 52ecf9ec6c3e2f8d2ee6e352931296f0e77b413e[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 11:45:29 2024 -0300
+
+    create a schedule models
+
+[33mcommit af31ab4a50897554be76632ecc01929f796a7d79[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 11:45:22 2024 -0300
+
+    create a schedule app
+
+[33mcommit d97433ebe10d04fa1a744cbe5464ad3373eb12b7[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 11:45:05 2024 -0300
+
+    consume a base fields
+
+[33mcommit b59fd7411f25520ea82d917b36fc0b3bc0b73180[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Thu Feb 29 11:44:47 2024 -0300
+
+    create a base fields
+
+[33mcommit f5ce6e361533cbdcae65a9aea0d1361fceddb078[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:32:11 2024 -0300
+
+    add command to execute places app
+
+[33mcommit 2579623ad2b09114e6dea3fc74d66167dd61abc3[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:29:45 2024 -0300
+
+    Bump db
+
+[33mcommit 4ac654fdcd7d66471c51435d2581009e796dea94[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:29:31 2024 -0300
+
+    Create places app and routes
+
+[33mcommit 91741153741e9bab9293810e715211e9a6e2fd36[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:28:59 2024 -0300
+
+    --ammend
+
+[33mcommit 6d178644399e3d12d62ece48ecc11d963220c8dd[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:20:43 2024 -0300
+
+    Create CRUD actions from places app
+
+[33mcommit 37c70fd3d2487a34c39af657905b262858b0616f[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:20:28 2024 -0300
+
+    Create schemas of places
+
+[33mcommit da31c5fc4fa08f1f513b2158635dcd29095f9175[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:20:20 2024 -0300
+
+    Create models of places
+
+[33mcommit 13e0e59ffe036eecec84946e1d83833b9137cc14[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:20:07 2024 -0300
+
+    Create places app
+
+[33mcommit 3b9c4f9a16dcb5e1d1dfa0a323dad30a29931571[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:19:49 2024 -0300
+
+    updating path and PEP8
+
+[33mcommit 6b6e920408f5920fba2e033147237da498d1f920[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:19:16 2024 -0300
+
+    split to generic database layer
+
+[33mcommit 05e7d5159bf6edbeb9149aa12f12d4f9869f1e84[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Wed Feb 28 13:18:48 2024 -0300
+
+    Fix requirements file
+
+[33mcommit c1105712440242dc04f43207df6197e38a19bca0[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Tue Feb 27 23:30:16 2024 -0300
+
+    Update readme with basic commands
+
+[33mcommit 0721f90ecc4811b0979e014a678b5b7e0a51eeb9[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Tue Feb 27 23:26:00 2024 -0300
+
+    dump database
+
+[33mcommit 50488f83bf1f6d05821904a033beffcb41f6db5a[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Tue Feb 27 23:25:47 2024 -0300
+
+    initializing base app
+
+[33mcommit c1732eba0822a24f5a072f1d4378b0ccb9bb8f00[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Tue Feb 27 23:25:29 2024 -0300
+
+    Create sample app and routes
+
+[33mcommit e202bb4890a382da58e46e651cf96d96a381c52d[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Tue Feb 27 23:24:57 2024 -0300
+
+    Create sample CRUD operations
+
+[33mcommit 25e85bf22ed9f63b555ac0e16d792b357fffd0e2[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Tue Feb 27 23:24:42 2024 -0300
+
+    Create Sample schemas
+
+[33mcommit d83a6fa429c16672fb37ab96ce7c2f878f672024[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Tue Feb 27 23:24:27 2024 -0300
+
+    Create Sample models
+
+[33mcommit c2820e4d762e13156361ad2efe2894a898927aa4[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Tue Feb 27 23:23:51 2024 -0300
+
+    Create SQL connection
+
+[33mcommit 89df49e1f8baa5078802efb00da1e67790aa125b[m
+Author: garusocruz <garusotec@gmail.com>
+Date:   Tue Feb 27 23:22:16 2024 -0300
+
+    Install base requirements
+
+[33mcommit 9824342a7b07b821dc454daab0ae761f6c0ff7f5[m
+Author: Gabriel Cruz <36795538+garusocruz@users.noreply.github.com>
+Date:   Wed Aug 9 15:54:57 2023 -0300
+
+    Initial commit
