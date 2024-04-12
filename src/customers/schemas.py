@@ -23,3 +23,13 @@ class  Customer(CustomerBase):
 
     class Config:
         from_attributes = True
+
+
+class CustomerUser(Customer):
+    user_id: int
+    email: str
+    username: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True

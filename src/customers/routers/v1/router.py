@@ -6,6 +6,7 @@ from ... import crud, models, schemas
 from ....db.database import engine, get_db
 from ....users import schemas as user_schema
 from ....users import service as user_service
+from ...adapters import users as user_adapter
 from fastapi import APIRouter
 
 router = APIRouter(prefix="/v1/customers", tags=["customer"])
@@ -22,6 +23,12 @@ def create_customer(current_user: Annotated[user_schema.UserCreate, Depends(user
         raise HTTPException(status_code=400, detail="Cant create customer CPF already exists")
     return customer
 
+
+@router.get("/customer/", response_model=schemas.CustomerUser)
+def read_customers(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):   
+    customer = user_adapter.get_customer_by_user_id(db=db, user_id=current_user.id)
+
+    return customer
 
 @router.get("/customers/", response_model=list[schemas.Customer])
 def read_customers(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
