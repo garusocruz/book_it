@@ -41,8 +41,6 @@ async def login_for_access_token(
 @router.post("/tokens/")
 async def login_for_access_token(request: Request, db: Session = Depends(get_db)) -> schemas.Token:
     request_json = await request.json()
-    import ipdb
-    ipdb.set_trace()
     user = auth_service.authenticate_user(db=db, username=request_json.get("username"), password=request_json.get("password"))
     if not user:
         raise HTTPException(
