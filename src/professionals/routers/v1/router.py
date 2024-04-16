@@ -24,6 +24,13 @@ def read_schedules(current_user: Annotated[user_schema.User, Depends(user_servic
     return users
 
 
+@router.get("/{customer_id}", response_model=schemas.Professional)
+def read_schedule(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], customer_id: int, db: Session = Depends(get_db)):
+    db_schedule = crud.get_professional(db, customer_id=customer_id)
+    if db_schedule is None:
+        raise HTTPException(status_code=404, detail="Professional not found")
+    return db_schedule
+
 @router.get("/{professional_id}", response_model=schemas.Professional)
 def read_schedule(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], professional_id: int, db: Session = Depends(get_db)):
     db_schedule = crud.get_professional(db, professional_id=professional_id)

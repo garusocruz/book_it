@@ -6,6 +6,9 @@ from . import models, schemas
 def get_professional(db: Session, professional_id: int):
     return db.query(models.Professional).filter(models.Professional.id == professional_id).first()
 
+def get_professional_by_customer_id(db: Session, customer_id: int):
+    return db.query(models.Professional).filter(models.Professional.customer_id == customer_id).first()
+
 
 def get_professionals(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Professional).offset(skip).limit(limit).all()
