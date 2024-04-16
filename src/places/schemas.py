@@ -1,3 +1,4 @@
+from datetime import datetime
 from pydantic import BaseModel
 from typing import Optional
 
@@ -7,11 +8,13 @@ class PlaceBase(BaseModel):
     description: Optional[str] = None
     is_active: bool
     name: str
+    owner_id: int
     
 
 
 class PlaceCreate(PlaceBase):
-    pass
+    created_at: datetime = datetime.now()
+    updated_at: Optional[datetime] = None
 
 
 class  Place(PlaceBase):

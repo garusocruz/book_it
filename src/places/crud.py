@@ -1,22 +1,32 @@
+from datetime import datetime
 from sqlalchemy.orm import Session
 
 from . import models, schemas
+from ..users import schemas as user_schema
 
 
 def get_place(db: Session, place_id: int):
     return db.query(models.Place).filter(models.Place.id == place_id).first()
+
+def get_place_by_professional_id(db: Session, professioal_id: int):
+    return db.query(models.Place).filter(models.Place.owner_id == professioal_id).first()
 
 
 def get_places(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Place).offset(skip).limit(limit).all()
 
 
-def create_place(db: Session, place: schemas.PlaceCreate):
+def create_place(db: Session, place: schemas.PlaceCreate, current_user: user_schema.User):
     db_place = models.Place(
         name = place.name, 
         description = place.description,
         capacity = place.capacity,
-        is_active = place.is_active)
+        is_active = place.is_active,
+        created_at = datetime.now(),
+        owner_id = current_user.id)
+    
+    import ipdb
+    ipdb.set_trace()
     db.add(db_place)
     db.commit()
     db.refresh(db_place)
