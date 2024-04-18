@@ -24,7 +24,7 @@ def create_customer(current_user: Annotated[user_schema.UserCreate, Depends(user
     return customer
 
 
-@router.get("/customer/", response_model=schemas.CustomerUser)
+@router.get("/me/", response_model=schemas.CustomerUser)
 def read_customers(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):   
     customer = user_adapter.get_customer_by_user_id(db=db, user_id=current_user.id)
 
