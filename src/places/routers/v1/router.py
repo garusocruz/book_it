@@ -30,7 +30,7 @@ def read_user(current_user: Annotated[user_schema.User, Depends(user_service.get
         raise HTTPException(status_code=404, detail="User not found")
     return db_user
 
-@router.get("/professional/{professional_id}", response_model=schemas.Place)
+@router.get("/professional/{professional_id}", response_model=list[schemas.Place])
 def read_user(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], professional_id: int, db: Session = Depends(get_db)):
     db_user = crud.get_place_by_professional_id(db, professional_id=professional_id)
     if db_user is None:

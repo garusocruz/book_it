@@ -8,8 +8,8 @@ from ..users import schemas as user_schema
 def get_place(db: Session, place_id: int):
     return db.query(models.Place).filter(models.Place.id == place_id).first()
 
-def get_place_by_professional_id(db: Session, professioal_id: int):
-    return db.query(models.Place).filter(models.Place.owner_id == professioal_id).first()
+def get_place_by_professional_id(db: Session, professional_id: int):
+    return db.query(models.Place).filter(models.Place.owner_id == professional_id)
 
 
 def get_places(db: Session, skip: int = 0, limit: int = 100):
@@ -25,8 +25,6 @@ def create_place(db: Session, place: schemas.PlaceCreate, current_user: user_sch
         created_at = datetime.now(),
         owner_id = current_user.id)
     
-    import ipdb
-    ipdb.set_trace()
     db.add(db_place)
     db.commit()
     db.refresh(db_place)
