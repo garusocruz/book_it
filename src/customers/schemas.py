@@ -30,6 +30,7 @@ class CustomerUser(Customer):
     email: str
     username: str
     created_at: datetime
+    professional_id: Optional[int] = None
 
     class Config:
         from_attributes = True
