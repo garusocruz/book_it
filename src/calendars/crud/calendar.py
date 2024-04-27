@@ -6,6 +6,9 @@ from .. import models, schemas
 def get_calendar(db: Session, calendar_id: int):
     return db.query(models.Calendar).filter(models.Calendar.id == calendar_id).first()
 
+def get_calendar_by_place_id(db: Session, place_id: int):
+    return db.query(models.Calendar).filter(models.Calendar.place_id == place_id)
+
 
 def get_calendars(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Calendar).offset(skip).limit(limit).all()
