@@ -7,6 +7,9 @@ from ..users import schemas as user_schema
 def get_schedule(db: Session, schedule_id: int):
     return db.query(models.Schedule).filter(models.Schedule.id == schedule_id).first()
 
+def get_schedule_by_place_id(db: Session, place_id: int):
+    return db.query(models.Schedule).filter(models.Schedule.place_id == place_id)
+
 
 def get_schedules(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Schedule).offset(skip).limit(limit).all()

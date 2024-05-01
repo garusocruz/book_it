@@ -13,33 +13,40 @@ models.Base.metadata.create_all(bind=engine)
 router = APIRouter(prefix="/v1/schedules", tags=["schedule"])
 
 
-@router.post("/schedules/", response_model=schemas.Schedule)
+@router.post("/", response_model=schemas.Schedule)
 def create_schedule(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], schedule: schemas.ScheduleCreate, db: Session = Depends(get_db)):
     return crud.create_schedule(db=db, schedule=schedule)
 
 
-@router.get("/schedules/", response_model=list[schemas.Schedule])
+@router.get("/", response_model=list[schemas.Schedule])
 def read_schedules(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     users = crud.get_schedules(db, skip=skip, limit=limit)
     return users
 
 
-@router.get("/schedules/{schedule_id}", response_model=schemas.Schedule)
+@router.get("/{schedule_id}", response_model=schemas.Schedule)
 def read_schedule(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], schedule_id: int, db: Session = Depends(get_db)):
     db_schedule = crud.get_schedule(db, schedule_id=schedule_id)
     if db_schedule is None:
         raise HTTPException(status_code=404, detail="Schedule not found")
     return db_schedule
 
+@router.get("/place/{place_id}", response_model=list[schemas.Schedule])
+def read_schedule(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], place_id: int, db: Session = Depends(get_db)):
+    db_schedule = crud.get_schedule_by_place_id(db, place_id=place_id)
+    if db_schedule is None:
+        raise HTTPException(status_code=404, detail="Schedule not found")
+    return db_schedule
 
-@router.put("/schedules/{schedule_id}", response_model=schemas.Schedule)
+
+@router.put("/{schedule_id}", response_model=schemas.Schedule)
 def update_place(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], schedule_id: int, schedule: schemas.ScheduleCreate, db: Session = Depends(get_db)):
     db_schedule = crud.update_schedule(db, schedule_id=schedule_id, schedule=schedule)
     if not db_schedule:
         raise HTTPException(status_code=404, detail="Place not found")
     return db_schedule
 
-@router.delete("/schedules/{schedule_id}", response_model=schemas.Schedule)
+@router.delete("/{schedule_id}", response_model=schemas.Schedule)
 def delete_place(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], schedule_id: int, db: Session = Depends(get_db)):
     db_schedule = crud.delete_schedule(db, schedule_id=schedule_id)
     if not db_schedule:
