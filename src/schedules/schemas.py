@@ -6,8 +6,8 @@ from typing import Optional
 class ScheduleBase(BaseModel):
     place_id: int
     week_day: int
-    start_at: datetime
-    finish_at: datetime
+    start_at: str
+    finish_at: str
 
 
 class ScheduleCreate(ScheduleBase):
