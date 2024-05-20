@@ -42,6 +42,17 @@ def update_customer(db:Session, customer_id: int, customer: schemas.CustomerCrea
     db.refresh(db_customer)
     return db_customer
 
+def update_customer_pic(db:Session, user_id: int, customer: schemas.CustomerPic):    
+    db_customer = db.query(models.Customer).filter(models.Customer.user_id == user_id).first()
+    if not db_customer:
+        return None
+    
+    db_customer.profile_pic = customer.profile_pic
+    db_customer.updated_at = datetime.now()
+    db.commit()
+    db.refresh(db_customer)
+    return db_customer
+
 def delete_customer(db:Session, customer_id: int):
     db_customer = db.query(models.Customer).filter(models.Customer.id == customer_id).first()
     if not db_customer:

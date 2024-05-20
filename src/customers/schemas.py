@@ -3,6 +3,11 @@ from pydantic import BaseModel
 from typing import Optional
 
 
+class CustomerPic(BaseModel):
+    profile_pic: str
+
+    class Config:
+        from_attributes = True
 
 class CustomerBase(BaseModel):
     name: str
@@ -31,6 +36,13 @@ class CustomerUser(Customer):
     username: str
     created_at: datetime
     professional_id: Optional[int] = None
+    profile_pic: Optional[str] = None
+
+    class Config:
+        from_attributes = True
+
+class CustomerProfilePic(BaseModel):
+    profile_pic: str
 
     class Config:
         from_attributes = True

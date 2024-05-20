@@ -11,3 +11,4 @@ class Customer(Base, BaseModel):
     phone = Column(String(15), nullable=False)
     cpf = Column(String(11), nullable=False, unique=True)
     user_id = Column("user_id", Integer, ForeignKey(User.id), nullable=False, on_delete="CASCADE")
+    profile_pic = Column(String(1000), nullable=True)

@@ -7,8 +7,9 @@ from ....db.database import engine, get_db
 from ....users import schemas as user_schema
 from ....users import service as user_service
 from ...adapters import users as user_adapter
-from fastapi import APIRouter
-
+from fastapi import APIRouter, File, UploadFile
+from src.libs.gcs import GCS
+import shutil
 router = APIRouter(prefix="/v1/customers", tags=["customer"])
 
 models.Base.metadata.create_all(bind=engine)
@@ -42,6 +43,15 @@ def read_customer(current_user: Annotated[user_schema.User, Depends(user_service
     if db_customer is None:
         raise HTTPException(status_code=404, detail="Customer not found")
     return db_customer
+
+@router.post("/profile_picture")
+def read_customer(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], db: Session = Depends(get_db), file: UploadFile = File(...)):
+    gcs = GCS(bucket_name="hawkers-storage")
+    with open("destination.png", "wb") as buffer:
+      shutil.copyfileobj(file.file, buffer)
+    path =gcs.upload_blob(source_file_name=file.filename)
+    crud.update_customer_pic(db, user_id=current_user.id, customer=schemas.CustomerPic(profile_pic=path))
+    return {"profilepic": path}
 
 
 @router.put("/customers/{customer_id}", response_model=schemas.Customer)
