@@ -19,5 +19,6 @@ def get_customer_by_user_id(db: Session, user_id: int):
         "email": user_data.email,
         "username": user_data.username, 
         "professional_id": professional_data.id if professional_data else None,
+        "profile_pic": customer_data.profile_pic
     })
     return customer
