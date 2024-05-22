@@ -31,6 +31,15 @@ def read_customers(current_user: Annotated[user_schema.User, Depends(user_servic
 
     return customer
 
+@router.get("/search/{param}", response_model=list[schemas.CustomerUser])
+def read_customers(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], param: str, skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):   
+    response = []
+    customers = user_adapter.get_customer(db=db, param=param)
+    for customer in customers:
+        response.append(user_adapter.get_customer_by_user_id(db=db, user_id=customer.user_id))
+
+    return response
+
 @router.get("/customers/", response_model=list[schemas.Customer])
 def read_customers(current_user: Annotated[user_schema.User, Depends(user_service.get_current_active_user)], skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     customers = crud.get_customers(db, skip=skip, limit=limit)

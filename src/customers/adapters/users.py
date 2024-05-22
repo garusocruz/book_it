@@ -1,3 +1,4 @@
+from sqlalchemy import or_
 from sqlalchemy.orm import Session
 from ...customers import models as customer_models, schemas as customer_schemas
 from ...users import crud as user_crud
@@ -22,3 +23,8 @@ def get_customer_by_user_id(db: Session, user_id: int):
         "profile_pic": customer_data.profile_pic
     })
     return customer
+
+def get_customer(db: Session, param: str):
+    customer_data = db.query(customer_models.Customer).filter(or_(customer_models.Customer.name.ilike(f"%{param}%"), customer_models.Customer.cpf.ilike(f"%{param}%"))).all()
+    
+    return customer_data
