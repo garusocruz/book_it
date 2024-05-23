@@ -17,7 +17,7 @@ models.Base.metadata.create_all(bind=engine)
 
 
 @router.post("/customers/", response_model=schemas.Customer)
-def create_customer(current_user: Annotated[user_schema.UserCreate, Depends(user_service.get_current_active_user)], customer: schemas.CustomerCreate, db: Session = Depends(get_db)):
+def create_customer(customer: schemas.CustomerCreate, db: Session = Depends(get_db)):
     customer = crud.create_customer(db=db, customer=customer)
 
     if not customer:

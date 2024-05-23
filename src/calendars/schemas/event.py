@@ -5,8 +5,9 @@ from typing import Optional
 
 class EventBase(BaseModel):
     calendar_id: int
-    schedule_id: int
     customer_id: int
+    start_at: datetime
+    finish_at: datetime
 
 
 class EventCreate(EventBase):
